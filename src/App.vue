@@ -3,7 +3,7 @@
 import { ref } from 'vue';
 import Quiz from './components/Quiz.vue';
 import Home from './components/Home.vue';
-import { type IQuiz } from './types/Quiz';
+import { type IQuiz } from './types/quiz';
 
 const quizes = ref<IQuiz[]>(
   [
@@ -32,7 +32,6 @@ function onSelectedQuiz(index: number) {
 }
 
 function onReturnToMain() {
-  console.log("test");
   selectedQuiz.value = undefined;
 }
 
@@ -54,3 +53,4 @@ main {
 
 @media (min-width: 1024px) {}
 </style>
+./types/quiz

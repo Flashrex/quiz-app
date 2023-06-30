@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IQuiz } from '@/types/Quiz';
+import type { IQuiz } from '@/types/quiz';
 
 const props = defineProps({
     quizzes: {
@@ -12,7 +12,7 @@ const props = defineProps({
 
 <template>
     <div class="content">
-        <h1>Quiz App</h1>
+        <h1 class="headline color-green">Quiz App</h1>
         <div v-for="(quiz, index) in props.quizzes" class="quiz-box">
             <h2>{{ quiz.title }}</h2>
             <p class="cursive">Anzahl Fragen: {{ quiz.questions.length }}</p>
@@ -24,8 +24,16 @@ const props = defineProps({
 <style scoped>
 .content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.headline {
+    font-size: 3em;
+}
+
+.color-green {
+    color: hsla(160, 100%, 37%, 1);
 }
 
 .cursive {
@@ -65,4 +73,4 @@ const props = defineProps({
 
 @media (min-width: 1024px) {}
 </style>
-../types/interfaces
+../types/interfaces@/types/quiz

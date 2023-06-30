@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IQuestion, IQuiz, IAnswer } from '@/types/Quiz';
+import type { IQuestion, IQuiz, IAnswer } from '@/types/quiz';
 import { ref } from 'vue';
 
 const props = defineProps({
@@ -11,7 +11,7 @@ const props = defineProps({
 
 const submitted = ref(false);
 
-function checkAnswers() {
+function onSubmit() {
     if (submitted.value) return;
     submitted.value = true;
 }
@@ -47,7 +47,7 @@ function getColor(answer: IAnswer) {
 
 <template>
     <div class="content">
-        <form v-on:submit.prevent="checkAnswers()">
+        <form v-on:submit.prevent="onSubmit()">
             <h1 class="headline">{{ props.quiz.title }}</h1>
             <div class="question-box" v-for="question in props.quiz.questions">
                 <h3 class="question-headline">{{ question.title }}</h3>
@@ -142,4 +142,4 @@ label:hover {
 
 @media (min-width: 1024px) {}
 </style>
-../types/interfaces
+../types/interfaces@/types/quiz
