@@ -13,6 +13,7 @@ const quizes = ref<IQuiz[]>(
         { type: "multiple_choice", title: "Was ist Vue.js?", answers: [{ text: "Datenbanksystem", isCorrect: false }, { text: "Programmiersprache", isCorrect: false }, { text: "JavaScript Framework", isCorrect: true }] },
         { type: "multiple_choice", title: "Welches Unternehmen steckt hinter Vue.js?", answers: [{ text: "Facebook", isCorrect: false }, { text: "Google", isCorrect: false }, { text: "Keines (Open Source Community)", isCorrect: true }] },
         { type: "single_choice", title: "Welchen API Stil sollte man für eine vollständige Applikation verwenden?", answers: [{ text: "Options API", isCorrect: false }, { text: "Composition API", isCorrect: true }] },
+        { type: "drop_list", title: "Bringe die Elemente in die richtige Reihenfolge", answers: [{ text: "Answer A" }, { text: "Answer B" }, { text: "Answer C" }, { text: "Answer D" }, { text: "Answer E" }] }
       ]
     },
     {

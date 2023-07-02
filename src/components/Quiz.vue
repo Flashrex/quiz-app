@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import type { IQuestion, IQuiz, IAnswer } from '@/types/quiz';
+import type { IQuestion, IQuiz } from '@/types/quiz';
 import { ref } from 'vue';
+import Question from './Question.vue';
 
 const props = defineProps({
     quiz: {
@@ -23,25 +24,8 @@ function updateAnswer(question: IQuestion, text: string) {
     answer.isSelected = !answer.isSelected;
 }
 
-function getInputType(type: string) {
-    switch (type) {
-        case "multiple_choice":
-            return "checkbox";
 
-        case "single_choice":
-            return "radio";
 
-        default:
-            return "";
-    }
-}
-
-function getColor(answer: IAnswer) {
-    if (!submitted.value) return "";
-
-    if (answer.isCorrect === answer.isSelected || !answer.isCorrect && answer.isSelected === undefined) return "question-success";
-    else return "question-failed";
-}
 
 </script>
 
@@ -49,26 +33,13 @@ function getColor(answer: IAnswer) {
     <div class="content">
         <form v-on:submit.prevent="onSubmit()">
             <h1 class="headline">{{ props.quiz.title }}</h1>
-            <div class="question-box" v-for="question in props.quiz.questions">
-                <h3 class="question-headline">{{ question.title }}</h3>
-
-                <div v-for="answer in question.answers">
-                    <div>
-                        <input v-bind:type="getInputType(question.type)" v-bind:name="question.title"
-                            v-bind:id="answer.text" v-on:change="updateAnswer(question, answer.text)" :disabled="submitted">
-                        <label v-bind:class="getColor(answer)" v-bind:for="answer.text">{{
-                            answer.text }}</label>
-                    </div>
-                </div>
-            </div>
+            <Question v-for="question in props.quiz.questions" :question="question" :submitted="submitted"
+                @updateAnswer="updateAnswer"></Question>
             <div class="flex">
                 <button v-if="!submitted" class="button_submit">Überprüfen</button>
                 <button v-else class="button_submit" @click="$emit('returnToMain')">Zurück zur Übersicht</button>
             </div>
-
         </form>
-
-
     </div>
 </template>
 
@@ -105,39 +76,6 @@ form {
     color: hsla(160, 100%, 37%, 1);
     border-color: hsla(160, 100%, 37%, 1);
     box-shadow: 0 0 10px hsla(160, 100%, 37%, 1);
-}
-
-.question-box {
-    border: 1px solid rgba(95, 95, 95, 0.673);
-    border-radius: 10px;
-    margin: 1rem;
-
-    padding: 1rem;
-    width: 100%;
-}
-
-.question-failed {
-    color: rgb(181, 58, 58);
-}
-
-.question-success {
-    color: rgb(59, 170, 59);
-}
-
-.question-headline {
-    margin-bottom: 0.5rem;
-}
-
-input {
-    margin-left: 0.5rem;
-}
-
-label {
-    margin-left: 1rem;
-}
-
-label:hover {
-    cursor: pointer;
 }
 
 @media (min-width: 1024px) {}
