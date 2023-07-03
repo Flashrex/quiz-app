@@ -46,6 +46,15 @@ function getColor(answer: IAnswer) {
     else return "question-failed";
 }
 
+function getColorDropList(answer: string) {
+    if (!props.submitted) return "";
+
+    const original = props.question.answers;
+    const current = reactiveRef.value.findIndex(a => a.name === answer);
+
+    if (original[current].text === answer) return "droplist-success";
+    else return "droplist-failed";
+}
 
 </script>
 
@@ -55,7 +64,7 @@ function getColor(answer: IAnswer) {
 
         <draggable v-if="question.type === 'drop_list'" v-model="filteredAnswers" item-key="name">
             <template #item="{ element }">
-                <div class="answer"> {{ element.name }}</div>
+                <div class="answer" v-bind:class="getColorDropList(element.name)"> {{ element.name }}</div>
             </template>
         </draggable>
 
@@ -112,5 +121,13 @@ label:hover {
 
 .answer:hover {
     cursor: pointer;
+}
+
+.droplist-failed {
+    border: 1px solid rgb(181, 58, 58);
+}
+
+.droplist-success {
+    border: 1px solid rgb(59, 170, 59);
 }
 </style>
