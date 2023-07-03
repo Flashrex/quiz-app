@@ -32,7 +32,7 @@ function updateAnswer(question: IQuestion, text: string) {
 <template>
     <div class="content">
         <form v-on:submit.prevent="onSubmit()">
-            <h1 class="headline">{{ props.quiz.title }}</h1>
+            <h1 class="headline color-green">{{ props.quiz.title }}</h1>
             <Question v-for="question in props.quiz.questions" :question="question" :submitted="submitted"
                 @updateAnswer="updateAnswer"></Question>
             <div class="flex">

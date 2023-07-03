@@ -15,7 +15,7 @@ const props = defineProps({
     }
 })
 
-const reactiveRef = ref(props.question.answers.map((a, index) => { return { id: index, name: a.text } }));
+const reactiveRef = ref(shuffle(props.question.answers.map((a, index) => { return { id: index, name: a.text } })));
 
 const filteredAnswers = computed({
     get() {
@@ -50,12 +50,26 @@ function getColorDropList(answer: string) {
     if (!props.submitted) return "";
 
     const original = props.question.answers;
-    const current = reactiveRef.value.findIndex(a => a.name === answer);
+    const current = reactiveRef.value.findIndex((a: { name: string; }) => a.name === answer);
 
     if (original[current].text === answer) return "droplist-success";
     else return "droplist-failed";
 }
 
+/**
+ * Shuffles array in place.
+ * @param {Array} a items An array containing the items.
+ */
+function shuffle(arr: any) {
+    var j, x, index;
+    for (index = arr.length - 1; index > 0; index--) {
+        j = Math.floor(Math.random() * (index + 1));
+        x = arr[index];
+        arr[index] = arr[j];
+        arr[j] = x;
+    }
+    return arr;
+}
 </script>
 
 <template>

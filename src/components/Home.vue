@@ -24,20 +24,8 @@ const props = defineProps({
 <style scoped>
 .content {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.headline {
-    font-size: 3em;
-}
-
-.color-green {
-    color: hsla(160, 100%, 37%, 1);
-}
-
-.cursive {
-    font-style: italic;
+    align-items: center;
+    flex-direction: column;
 }
 
 .quiz-box {
@@ -45,7 +33,7 @@ const props = defineProps({
     border-radius: 10px;
     margin: 1rem;
 
-    padding: 1rem;
+    padding: 1rem 8rem;
     width: 100%;
 
     display: flex;
