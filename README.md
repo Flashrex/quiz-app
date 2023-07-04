@@ -79,7 +79,7 @@ A drop list question is a question where you need to bring the answers in the co
 ```js
 {
     "type": "drop_list",
-    "title": "Bringe die Elemente in die richtige Reihenfolge",
+    "title": "YOUR QUESTION HERE",
     "answers": [
         {
             "text": "Answer A"

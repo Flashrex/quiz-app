@@ -1,0 +1,62 @@
+{
+    "title": "YOUR QUIZ NAME",
+    "questions": [
+        {
+            "type": "single_choice",
+            "title": "YOUR QUESTION HERE",
+            "answers": [
+                {
+                    "text": "YOUR FIRST ANSWER",
+                    "isCorrect": false
+                },
+                {
+                    "text": "YOUR SECOND ANSWER",
+                    "isCorrect": false
+                },
+                {
+                    "text": "YOUR THIRD ANSWER",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "type": "multiple_choice",
+            "title": "YOUR QUESTION HERE",
+            "answers": [
+                {
+                    "text": "YOUR FIRST ANSWER",
+                    "isCorrect": false
+                },
+                {
+                    "text": "YOUR SECOND ANSWER",
+                    "isCorrect": true
+                },
+                {
+                    "text": "YOUR THIRD ANSWER",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "type": "drop_list",
+            "title": "YOUR QUESTION HERE",
+            "answers": [
+                {
+                    "text": "Answer A"
+                },
+                {
+                    "text": "Answer B"
+                },
+                {
+                    "text": "Answer C"
+                },
+                {
+                    "text": "Answer D"
+                },
+                {
+                    "text": "Answer E"
+                }
+            ]
+        }
+    ]
+}
