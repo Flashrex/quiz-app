@@ -3,6 +3,12 @@
 A vue 3 quiz app. Create your own tests and check your knowledge.
 Generated using vue version 3.3.4 and typescript.
 
+## Images
+
+![Home](https://github.com/Flashrex/quiz-app/blob/master/public/assets/images/home.png?raw=true)
+
+![Quiz](https://github.com/Flashrex/quiz-app/blob/master/public/assets/images/quiz.png?raw=true)
+
 ## Creating your own Quizzes
 
 To create a new quiz simply place your quiz.json file in "public/assets/quizzes/". 
@@ -26,7 +32,7 @@ A barebone quiz.json looks like this:
 
 Currently there are 3 types of questions for Quizzes.
 
-# Single Choice Question
+### Single Choice Question
 A single choice question is a question where only one answer is correct.
 
 ```js
@@ -49,7 +55,7 @@ A single choice question is a question where only one answer is correct.
 
 You can add as many answers as you like. Keep in mind that only one answer should have a positive "isCorrect" value.
 
-# Multiple Choice Question
+### Multiple Choice Question
 A multiple choice question is a question where multiple answers are correct.
 
 ```js
@@ -73,7 +79,7 @@ A multiple choice question is a question where multiple answers are correct.
 You can add as many answers as you like.
 There is no limit on how many answers are correct.
 
-# Drop List Question
+### Drop List Question
 A drop list question is a question where you need to bring the answers in the correct order.
 
 ```js
