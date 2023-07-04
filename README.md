@@ -7,8 +7,6 @@ Generated using vue version 3.3.4 and typescript.
 
 ![Home](https://github.com/Flashrex/quiz-app/blob/master/public/assets/images/home.png?raw=true)
 
-![Quiz](https://github.com/Flashrex/quiz-app/blob/master/public/assets/images/quiz.png?raw=true)
-
 ![Quiz_Submitted](https://github.com/Flashrex/quiz-app/blob/master/public/assets/images/quiz_submitted.png?raw=true)
 
 ## Creating your own Quizzes
