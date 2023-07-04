@@ -1,25 +1,102 @@
-# vue-project
+# Quiz App Vue 3
 
-This template should help get you started developing with Vue 3 in Vite.
+A vue 3 quiz app. Create your own tests and check your knowledge.
+Generated using vue version 3.3.4 and typescript.
 
-## Recommended IDE Setup
+## Creating your own Quizzes
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+To create a new quiz simply place your quiz.json file in "public/assets/quizzes/". 
+Afterwards add your filename to "src/quizzes.ts".
+Thats it! Restart the app and your quiz should be displayed.
 
-## Type Support for `.vue` Imports in TS
+## How to format the quiz file
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+This framework is using json-files to save and load quizzes.
+A barebone quiz.json looks like this:
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+```js
+{
+    "title": "YOUR QUIZ NAME",
+    "questions": [
+        ...
+    ]
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+}
+```
 
-## Customize configuration
+Currently there are 3 types of questions for Quizzes.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+# Single Choice Question
+A single choice question is a question where only one answer is correct.
+
+```js
+{
+    "type": "single_choice",
+    "title": "YOUR QUESTION HERE"
+    "answers": [
+        {
+            "text": "YOUR FIRST ANSWER",
+            "isCorrect": true
+        },
+        {
+            "text": "YOUR SECOND ANSWER",
+            "isCorrect": false
+        },
+        ...
+    ]
+}
+```
+
+You can add as many answers as you like. Keep in mind that only one answer should have a positive "isCorrect" value.
+
+# Multiple Choice Question
+A multiple choice question is a question where multiple answers are correct.
+
+```js
+{
+    "type": "multiple_choice",
+    "title": "YOUR QUESTION HERE"
+    "answers": [
+        {
+            "text": "YOUR FIRST ANSWER",
+            "isCorrect": true
+        },
+        {
+            "text": "YOUR SECOND ANSWER",
+            "isCorrect": false
+        },
+        ...
+    ]
+}
+```
+
+You can add as many answers as you like.
+There is no limit on how many answers are correct.
+
+# Drop List Question
+A drop list question is a question where you need to bring the answers in the correct order.
+
+```js
+{
+    "type": "drop_list",
+    "title": "Bringe die Elemente in die richtige Reihenfolge",
+    "answers": [
+        {
+            "text": "Answer A"
+        },
+        {
+            "text": "Answer B"
+        },
+        {
+            "text": "Answer C"
+        },
+        ...
+    ]
+}
+```
+
+You can add as many answers as you like. 
+Keep in mind that the order of your answers in the array is considered the correct order while submitting the quiz.
 
 ## Project Setup
 
