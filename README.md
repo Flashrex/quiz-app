@@ -9,6 +9,8 @@ Generated using vue version 3.3.4 and typescript.
 
 ![Quiz](https://github.com/Flashrex/quiz-app/blob/master/public/assets/images/quiz.png?raw=true)
 
+![Quiz_Submitted](https://github.com/Flashrex/quiz-app/blob/master/public/assets/images/quiz_submitted.png?raw=true)
+
 ## Creating your own Quizzes
 
 To create a new quiz simply place your quiz.json file in "public/assets/quizzes/". 
